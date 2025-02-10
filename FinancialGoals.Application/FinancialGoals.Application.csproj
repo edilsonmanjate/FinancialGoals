@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Features\FinancialGoal\Commands\CreateFinancialGoalCommand\" />
+    <Folder Include="Features\FinancialGoal\Commands\DeleteFinancialGoalCommand\" />
+    <Folder Include="Features\FinancialGoal\Commands\UpdateFinancialGoalCommand\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetAllFinancialGoalsQuery\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetFinancialGoalsByUserIdQuery\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetFinancialGoalsByStatusQuery\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetFinancialGoalsByDueDate\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetFinancialGoalsByTargetQuery\" />
+    <Folder Include="Features\FinancialGoal\Queries\GetFinancialGoalsIdealMonthQuery\" />
+    <Folder Include="Features\Trasanction\Commands\CreateTrasanctionCommand\" />
+    <Folder Include="Features\Trasanction\Commands\DeleteTrasanctionCommand\" />
+    <Folder Include="Features\Trasanction\Commands\UpdateTrasanctionCommand\" />
+    <Folder Include="Features\Trasanction\Queries\GetAllTransationsQuery\" />
+    <Folder Include="Features\Trasanction\Queries\GetTransactionsByTransactionTypeQuery\" />
+    <Folder Include="Features\Trasanction\Queries\GetTransactionsByDateQuery\" />
+    <Folder Include="Features\Trasanction\Queries\GetTransactoinsByUserIdQuery\" />
+    <Folder Include="Features\Trasanction\Queries\GetTransactionByFinancialGoalIdQuery\" />
+    <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>
