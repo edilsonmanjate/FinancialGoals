@@ -25,7 +25,7 @@ public class FinancialGoal : BaseEntity
     public DateOnly DueDate { get; private set; }
     public decimal IdealMonthlyAmount { get; private set; }
     public Status Status { get; private set; }
-    public Guid UserId { get; set; }
+    public Guid UserId { get; private set; }
     public List<Trasanction> Trasanctions { get; private set; }
 
 
