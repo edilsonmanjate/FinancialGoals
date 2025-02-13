@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Mappings\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetAllFinancialGoalsQuery\" />
     <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByUserIdQuery\" />
     <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByStatusQuery\" />
     <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByDueDate\" />
