@@ -13,7 +13,7 @@ public class CreateFinancialGoalCommand : IRequest<BaseResponse<bool>>
     public DateOnly DueDate { get; set; }
     public decimal IdealMonthlyAmount { get; set; }
     public Status Status { get; set; }
-    public string ImageUrl { get; set; }
+    public string Image { get; set; }
 
     public Guid UserId { get; set; }
 }

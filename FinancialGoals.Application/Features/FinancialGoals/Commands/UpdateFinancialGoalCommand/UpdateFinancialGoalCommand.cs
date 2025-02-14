@@ -12,7 +12,7 @@ public class UpdateFinancialGoalCommand : IRequest<BaseResponse<bool>>
     public decimal Target { get; set; }
     public DateOnly DueDate { get; set; }
     public decimal IdealMonthlyAmount { get; set; }
-    public string ImageUrl { get; private set; }
+    public string Image { get; private set; }
     public Status Status { get; set; }
     public Guid UserId { get; set; }
 }

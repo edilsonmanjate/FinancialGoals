@@ -30,7 +30,7 @@ public class UpdateFinancialGoalCommandHandler : IRequestHandler<UpdateFinancial
                 command.Target, 
                 command.DueDate, 
                 command.IdealMonthlyAmount, 
-                command.ImageUrl,
+                command.Image,
                 command.Status,
                 [], 
                 command.UserId);

@@ -10,7 +10,7 @@ public class FinancialGoal : BaseEntity
         Target = target;
         DueDate = dueDate;
         IdealMonthlyAmount = idealMonthlyAmount;
-        ImageUrl = imageUrl;
+        Image = imageUrl;
         Status = status;
         Trasanctions = new List<Trasanction>();
         UserId = userId;
@@ -27,7 +27,7 @@ public class FinancialGoal : BaseEntity
     public decimal IdealMonthlyAmount { get; private set; }
     public Status Status { get; private set; }
     public Guid UserId { get; private set; }
-    public string ImageUrl { get; private set; }
+    public string Image { get; private set; }
     public List<Trasanction> Trasanctions { get; private set; }
 
 
