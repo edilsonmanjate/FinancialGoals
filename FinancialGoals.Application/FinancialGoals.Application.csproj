@@ -8,16 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Mappings\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByUserIdQuery\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByStatusQuery\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByDueDate\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsByTargetQuery\" />
-    <Folder Include="Features\FinancialGoals\Queries\GetFinancialGoalsIdealMonthQuery\" />
-    <Folder Include="Features\Trasanctions\Queries\GetAllTransationsQuery\" />
-    <Folder Include="Features\Trasanctions\Queries\GetTransactionsByTransactionTypeQuery\" />
-    <Folder Include="Features\Trasanctions\Queries\GetTransactionsByDateQuery\" />
-    <Folder Include="Features\Trasanctions\Queries\GetTransactoinsByUserIdQuery\" />
-    <Folder Include="Features\Trasanctions\Queries\GetTransactionByFinancialGoalIdQuery\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
