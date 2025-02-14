@@ -1,5 +1,6 @@
 ﻿using Azure.Identity;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 using FinancialGoals.Application.Services;
 
@@ -7,28 +8,54 @@ namespace FinancialGoals.Infrastructure.Services;
 
 public class AzureBloobStorageService : IAzureBloobStorageService
 {
-    public Task<bool> ContainerExistsAsync(string containerName)
+    private readonly BlobServiceClient _blobServiceClient;
+
+    public AzureBloobStorageService(string blobServiceEndpoint, string clientId, string clientSecret, string tenantId)
     {
-        throw new NotImplementedException();
+        var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
+        _blobServiceClient = new BlobServiceClient(new Uri(blobServiceEndpoint), credential);
     }
 
-    public Task CreateContainerAsync(string containerName)
+    public async Task<bool> ContainerExistsAsync(string containerName)
     {
-        throw new NotImplementedException();
+        var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        return await containerClient.ExistsAsync();
     }
 
-    public Task DeleteFileAsync(string containerName, string fileName)
+    public async Task CreateContainerAsync(string containerName)
     {
-        throw new NotImplementedException();
+        var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        await containerClient.CreateIfNotExistsAsync(PublicAccessType.None);
     }
 
-    public Task<byte[]> DownloadFileAsync(string containerName, string fileName)
+    public async Task DeleteFileAsync(string containerName, string fileName)
     {
-        throw new NotImplementedException();
+        var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        var blobClient = containerClient.GetBlobClient(fileName);
+        await blobClient.DeleteIfExistsAsync();
     }
 
-    public Task<string> UploadFileAsync(string containerName, string filePath)
+    public async Task<byte[]> DownloadFileAsync(string containerName, string fileName)
     {
-        throw new NotImplementedException();
+        var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        var blobClient = containerClient.GetBlobClient(fileName);
+        var downloadInfo = await blobClient.DownloadAsync();
+
+        using (var memoryStream = new MemoryStream())
+        {
+            await downloadInfo.Value.Content.CopyToAsync(memoryStream);
+            return memoryStream.ToArray();
+        }
+    }
+
+    public async Task<string> UploadFileAsync(string containerName, string filePath)
+    {
+        var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        var blobClient = containerClient.GetBlobClient(Path.GetFileName(filePath));
+
+        await using var fileStream = File.OpenRead(filePath);
+        await blobClient.UploadAsync(fileStream, true);
+
+        return blobClient.Uri.ToString();
     }
 }
