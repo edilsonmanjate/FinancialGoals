@@ -25,7 +25,14 @@ public class UpdateTrasanctionCommandHandler : IRequestHandler<UpdateTrasanction
         try
         {
 
-            var trasanction = new Trasanction(command.Quantity, command.TransactionType, command.Date, command.FinancialGoalId, command.UserId);
+            var trasanction = new Trasanction(
+                command.Quantity,
+                command.TransactionType,
+                command.Date,
+                command.FinancialGoalId,
+                command.UserId,
+                command.ActualTotal);
+
 
             response.Data = await _trasanctionRepository.Update(trasanction);
             await _unitOfWork.Save(cancellationToken);

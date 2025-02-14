@@ -24,7 +24,14 @@ public class CreateFinancialGoalCommandHandler : IRequestHandler<CreateFinancial
         try
         {
 
-            var financialGoal = new FinancialGoal(command.Title, command.Target, command.DueDate, command.IdealMonthlyAmount, command.Status, [],command.UserId);
+            var financialGoal = new FinancialGoal(
+                command.Title, 
+                command.Target, 
+                command.DueDate, 
+                command.IdealMonthlyAmount, 
+                command.ImageUrl,
+                command.Status, [],
+                command.UserId);
 
             response.Data = await _financialGoalRepository.Create(financialGoal);
             await _unitOfWork.Save(cancellationToken);

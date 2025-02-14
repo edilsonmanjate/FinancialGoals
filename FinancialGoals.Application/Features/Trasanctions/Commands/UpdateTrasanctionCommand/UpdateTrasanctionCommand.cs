@@ -13,4 +13,5 @@ public class UpdateTrasanctionCommand : IRequest<BaseResponse<bool>>
     public DateOnly Date { get; private set; }
     public Guid FinancialGoalId { get; private set; }
     public Guid UserId { get; set; }
+    public decimal ActualTotal { get; private set; }
 }

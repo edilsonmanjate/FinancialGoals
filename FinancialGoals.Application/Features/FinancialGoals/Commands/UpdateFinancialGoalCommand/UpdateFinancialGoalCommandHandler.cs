@@ -25,7 +25,15 @@ public class UpdateFinancialGoalCommandHandler : IRequestHandler<UpdateFinancial
         try
         {
 
-            var financialGoal = new FinancialGoal(command.Title, command.Target, command.DueDate, command.IdealMonthlyAmount, command.Status, [], command.UserId);
+            var financialGoal = new FinancialGoal(
+                command.Title, 
+                command.Target, 
+                command.DueDate, 
+                command.IdealMonthlyAmount, 
+                command.ImageUrl,
+                command.Status,
+                [], 
+                command.UserId);
 
             response.Data = await _financialGoalRepository.Update(financialGoal);
             await _unitOfWork.Save(cancellationToken);

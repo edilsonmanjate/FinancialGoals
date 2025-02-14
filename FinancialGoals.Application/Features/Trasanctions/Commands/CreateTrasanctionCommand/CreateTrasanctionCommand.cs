@@ -8,9 +8,10 @@ namespace FinancialGoals.Application.Features.Trasanctions.Commands.CreateTrasan
 public class CreateTrasanctionCommand : IRequest<BaseResponse<bool>>
 {
     public Guid Id { get; set; }
-    public decimal Quantity { get; private set; }
-    public TransactionType TransactionType { get; private set; }
-    public DateOnly Date { get; private set; }
-    public Guid FinancialGoalId { get; private set; }
+    public decimal Quantity { get;  set; }
+    public TransactionType TransactionType { get;  set; }
+    public DateOnly Date { get;  set; }
+    public Guid FinancialGoalId { get;  set; }
     public Guid UserId { get; set; }
+    public decimal ActualTotal { get;  set; }
 }

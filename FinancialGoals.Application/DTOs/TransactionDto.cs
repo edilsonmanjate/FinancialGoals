@@ -11,4 +11,7 @@ public class TransactionDto
     public decimal IdealMonthlyAmount { get; set; }
     public Status Status { get; set; }
     public Guid UserId { get; set; }
+    public decimal ActualTotal { get; private set; }
+
+
 }

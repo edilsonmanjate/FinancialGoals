@@ -6,6 +6,6 @@ public enum Status
     InProgress,
     Completed,
     Cancelled,
-    Paused
+    OnHold
 
 }

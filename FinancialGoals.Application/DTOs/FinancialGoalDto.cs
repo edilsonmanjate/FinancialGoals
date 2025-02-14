@@ -12,5 +12,7 @@ public class FinancialGoalDto
     public decimal IdealMonthlyAmount { get; set; }
     public Status Status { get; set; }
     public Guid UserId { get; set; }
+    public string ImageUrl { get; set; }
+
     public List<Trasanction> Trasanctions { get; set; }
 }

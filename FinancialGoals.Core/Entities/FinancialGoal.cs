@@ -4,12 +4,13 @@ namespace FinancialGoals.Core.Entities;
 
 public class FinancialGoal : BaseEntity
 {
-    public FinancialGoal(string title, decimal target, DateOnly dueDate, decimal idealMonthlyAmount, Status status, List<Trasanction> trasanctions, Guid userId)
+    public FinancialGoal(string title, decimal target, DateOnly dueDate, decimal idealMonthlyAmount, string imageUrl, Status status, List<Trasanction> trasanctions, Guid userId)
     {
         Title = title;
         Target = target;
         DueDate = dueDate;
         IdealMonthlyAmount = idealMonthlyAmount;
+        ImageUrl = imageUrl;
         Status = status;
         Trasanctions = new List<Trasanction>();
         UserId = userId;
@@ -26,6 +27,7 @@ public class FinancialGoal : BaseEntity
     public decimal IdealMonthlyAmount { get; private set; }
     public Status Status { get; private set; }
     public Guid UserId { get; private set; }
+    public string ImageUrl { get; private set; }
     public List<Trasanction> Trasanctions { get; private set; }
 
 

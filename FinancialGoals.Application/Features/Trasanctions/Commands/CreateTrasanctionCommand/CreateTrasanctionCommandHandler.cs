@@ -25,7 +25,13 @@ public class CreateTrasanctionCommandHandler : IRequestHandler<CreateTrasanction
         try
         {
 
-            var trasanction = new Trasanction(command.Quantity,command.TransactionType,command.Date,command.FinancialGoalId,command.UserId);
+            var trasanction = new Trasanction(
+                command.Quantity,
+                command.TransactionType,
+                command.Date,
+                command.FinancialGoalId,
+                command.UserId,
+                command.ActualTotal);
 
             response.Data = await _trasanctionRepository.Create(trasanction);
             await _unitOfWork.Save(cancellationToken);
