@@ -2,14 +2,16 @@
 
 public class User : BaseEntity
 {
-    public User(Guid id, string email, string password)
+    public User(string email, string password, string firstName, string lastName)
     {
-        Id = id;
         Email = email;
         Password = password;
+        FirstName = firstName;
+        LastName = lastName;
     }
 
-    public Guid Id { get; private set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
     public string Email { get; private set; }
     public string Password { get; private set; }
 }

@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Common\Mappings\" />
-    <Folder Include="Features\Users\Commands\" />
+    <Folder Include="Features\Users\Commands\DeleteUserCommand\" />
+    <Folder Include="Features\Users\Commands\UpdateUserCommand\" />
   </ItemGroup>
 
   <ItemGroup>
